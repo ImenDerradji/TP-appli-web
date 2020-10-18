@@ -1,0 +1,23 @@
+body {
+  background-color: gainsboro;
+}
+table {
+    background-color: white;
+}
+a:hover {
+    background-color: orange;
+}
+tr:nth-child(odd) {
+    background: paleturquoise;
+} 
+tr:hover {
+    background: greenyellow;
+}
+img:hover {
+    transform : scale(2);
+}
+@media only screen and (max-width: 1000px) {
+    body {
+        background-color: lightblue;
+    }
+}

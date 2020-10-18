@@ -5,18 +5,18 @@ table {
     background-color: white;
 }
 a:hover {
-    background-color: orange;
+    background-color: gray;
 }
 tr:nth-child(odd) {
-    background: paleturquoise;
+    background: whitesmoke;
 } 
 tr:hover {
-    background: greenyellow;
+    background: burlywood;
 }
 img:hover {
     transform : scale(2);
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width:50px) {
     body {
         background-color: lightblue;
     }

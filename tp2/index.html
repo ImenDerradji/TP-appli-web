@@ -1,33 +1,25 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP2</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
-        <style>
-          body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-              font-size: 16px;
-              margin: 0 auto;
-              max-width: 800px;              
-          }
-        </style>
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="js/main.js"></script>-->
+        <link rel="stylesheet" href="formulaire.css"/>
+        <script type="text/javascript" src="formulaire.js"></script>
+        <h1>Saisie d'une fiche "Personne"</h1>
     </head>
-    <body>        
-        <h1>tp2</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+    <form id="formTP2" onsubmit="validation()">
+        <label for="lname">Nom:</label>
+        <input type="text" id="lname" name="lname" placeholder="ex:Gates" maxlength=50/></br>
+        <label for="fname">Prénom:</label>
+        <input type="text" id="fname" name="fname" placeholder="ex:Bill" maxlength=50/></br>
+        <label for="birthdate">Date de naissance:</label>
+        <input type="date" id="birthdate" name="birthdate" placeholder="JJ/MM/AAAA" maxlength=50/></br>
+        <label for="address">Adresse:</label>
+        <input type="text" id="address" name="address" placeholder="ex: 02 Rue de la République" maxlength=50></br>
+        <label for="email">Mail:</label>
+        <input type="mail" id="email" name="email" placeholder="ex: billgates@mail.com" maxlength=50></br>
+        <p>
+            <input type="button" value="Valider" onclick="validation()"></input>
+        </p>
+    </form>
+    <div id="error"></div>
+    <div id="resultat"></div>
 </html>

@@ -1,0 +1,22 @@
+label{
+    width: 150px;
+    padding: 5px;
+    display: inline-block;
+}
+input{
+    width: 150px;
+    padding: 1px;
+    display: inline-block;
+}
+div{
+    background-color: pink; 
+    padding: 5px;
+    border: 1px black;
+    display: none;
+}
+div{
+    background-color: green; 
+    padding: 5px;
+    text-decoration: white;
+    display: none;
+}

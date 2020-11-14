@@ -5,21 +5,25 @@
         <script type="text/javascript" src="formulaire.js"></script>
         <h1>Saisie d'une fiche "Personne"</h1>
     </head>
-    <form id="formTP2" onsubmit="validation()">
-        <label for="lname">Nom:</label>
-        <input type="text" id="lname" name="lname" placeholder="ex:Gates" maxlength=50/></br>
-        <label for="fname">Prénom:</label>
-        <input type="text" id="fname" name="fname" placeholder="ex:Bill" maxlength=50/></br>
-        <label for="birthdate">Date de naissance:</label>
-        <input type="date" id="birthdate" name="birthdate" placeholder="JJ/MM/AAAA" maxlength=50/></br>
-        <label for="address">Adresse:</label>
-        <input type="text" id="address" name="address" placeholder="ex: 02 Rue de la République" maxlength=50></br>
-        <label for="email">Mail:</label>
-        <input type="mail" id="email" name="email" placeholder="ex: billgates@mail.com" maxlength=50></br>
-        <p>
-            <input type="button" value="Valider" onclick="validation()"></input>
-        </p>
-    </form>
-    <div id="error"></div>
-    <div id="resultat"></div>
+    <body>
+        <form id="formTP2" onsubmit="validation()">
+            <label for="lname">Nom:</label>
+            <input type="text" id="lname" name="lname" placeholder="ex:Gates" minlength="5" maxlength="20" class="inputForm"/><br>
+            <label for="fname">Prénom:</label>
+            <input type="text" id="fname" name="fname" placeholder="ex:Bill" minlength="5" maxlength="20" class="inputForm"/><br>
+            <label for="birthdate">Date de naissance:</label>
+            <input type="date" id="birthdate" name="birthdate" placeholder="JJ/MM/AAAA" class="inputForm"/><br>
+            <label for="address">Adresse:</label>
+            <input type="text" id="address" name="address" placeholder="ex: 02 Rue de la République" 
+            minlength="5" maxlength="50" class="inputForm"/><br>
+            <label for="email">Mail:</label>
+            <input type="email" id="email" name="email" placeholder="ex: billgates@mail.com" 
+            minlength="5" maxlength="30" class="inputForm"/>
+            <p>
+                <input type="button" value="Valider" onclick="validation()"/>
+            </p>
+        </form>
+        <div id="error"></div>
+        <div id="resultat"></div>
+    </body>
 </html>

@@ -19,7 +19,7 @@ function validation(){
       
       // ajout de la classe CSS "display"
       document.getElementById("error").classList.add("display");
-        document.getElementById("resultat").classList.remove("display")
+      document.getElementById("resultat").classList.remove("display")
     }
   }
   if(document.getElementById("error").innerHTML == ""){

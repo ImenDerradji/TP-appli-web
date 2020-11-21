@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TP3 AW - Formulaire v2</title>
-        <script src="form-jquery-validation.js"></script>
         <!-- jquery pour pouvoir utiliser les composants JS de boostap (modal, tooltip...) -->
         <script src="jquery-3.2.1.slim.min.js"></script>
         <!-- CSS boostrap -->
@@ -12,42 +8,68 @@
         <script src="popper.min.js"></script>
         <!-- composants JS de boostrap (modal http://getbootstrap.com/docs/4.0/components/modal/ , collapse...) -->
         <script src="bootstrap.min.js"></script>
+        <script src="form-jquery-validation.js"></script>
+        <style>
+            body{
+                background-color: rgb(207, 229, 248);
+                max-width: 800px; margin: 0 auto;
+            }
+
+            Label{
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            .modal-body img{
+                max-width: 100%;
+            }
+        </style>
     </head>
     <body>
-        <form>
-            <div class="container">
-                <h1>TP3 AW - Formulaire v2</h1>
-                <label for="lname">Nom:</label>
-                <input type="text" class="form-control" id="lname" placeholder="ex: Holmes"/><br>
-                <label for="fname">Prénom:</label>
-                <input type="text" class="form-control" id="fname" placeholder="ex: Sherlock"/><br>
-                <label for="birthdate">Date de naissance:</label>
-                <input type="date" class="form-control" id="birthdate" placeholder="JJ/MM/AAAA"/><br>
-                <label for="address">Adresse:</label>
-                <input type="text" class="form-control" id="address" placeholder="ex: 02 Rue de la République"/><br>
-                <label for="email">Mail:</label>
-                <input type="email" class="form-control" id="email" placeholder="sherlockholmes@gmail.com"/><br>
-                <button type="button" class="btn btn-primary">Valider</button>
-            </div>
-        </form>
-        <div class="modal" tabindex="-1" role="dialog" id="myModal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Corps de la modal à modifier après validation du formulaire</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+        <div class="container">
+            <!-- Content here -->
+            <form>
+                <h1>TP AW - Formulaire v2</h1><br>
+                <div class="form-group">
+                    <label for="lname">Nom</label>
+                    <input type="text" class="form-control" id="lname" placeholder="ex: Holmes">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="fname">Prénom</label>
+                    <input type="text" class="form-control" id="fname" placeholder="ex: Sherlock">
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Date de naissance</label>
+                    <input type="date" class="form-control" id="birthdate">
+                </div>
+                <div class="form-group">
+                    <label for="address">Adresse</label>
+                    <input type="text" class="form-control" id="address" placeholder="ex: 221b Baker St, Marylebone, Londre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="ex: sherlock@xyz.com">
+                </div>
+                <button type="button" id="valider" class="btn btn-primary btn-lg">Valider</button>
+                <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Corps de la modal à modifier après validation du formulaire</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </form>
         </div>
     </body>
 </html>

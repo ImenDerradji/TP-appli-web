@@ -1,29 +1,61 @@
-$( document ).ready(function() {
-    $("#valider").on("click",function(event){
-        event.preventDefault();
+window.onload = function () {    
+    $( document ).ready(function() {
+      
+        //--------Afficher le nombre de caractères--------//  
+        $("#lname").keyup(function() {
+            $("#car1").text($(this).val().length + " car.");
+        });
+        $("#fname").keyup(function() {
+            $("#car2").text($(this).val().length + " car.");
+        });
+        $("#birthdate").keyup(function() {
+            $("#car3").text($(this).val().length + " car.");
+        });
+        $("#address").keyup(function() {
+            $("#car4").text($(this).val().length + " car.");
+        });
+        $("#email").keyup(function() {
+            $("#car5").text($(this).val().length + " car.");
+        });
 
-        if (($("#lname").val() && $("#fname").val() && $("#birthdate").val() && $("#address").val() && $("#email").val())!=""){
-            $(".modal-title").text("Bienvenue " + "" + $("#fname").val());
-            var city = $("#address").val();
-            $(".modal-body").html(`<a href="https://www.google.com/maps"> 
-            <img src="https://maps.googleapis.com/maps/api/staticmap?markers=${city}&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg">`);
-            $('#myModal').modal("show");
-        }   
-        else {
-            $(".modal-title").text("Erreur");
-            $(".modal-body").text("La saisie de tous les champs est obligatoire");
-            $('#myModal').modal("show");
-        }
-    });
+        //-------------Afficher latlon-------------// 
+        $("#gps").on("click",function(event){
+            event.preventDefault();
+            getLocation()
+            $("#lat").val(position.coords.latitude); 
+            $("#lng").val(position.coords.longitude);
+        });
 
-    $("#gps").on("click",function(event){
-        event.preventDefault();
-        getLocation()
-        $("#lat").val(position.coords.latitude); 
-        $("#lng").val(position.coords.longitude);
+        //-------------Form validation $ JSON table-------------// 
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (($("#lname").val() && $("#fname").val() && $("#birthdate").val() && $("#address").val() && $("#email").val())!=""){
+                contactStore.add(
+                    document.querySelector("#lname").value,
+                    document.querySelector("#fname").value,
+                    document.querySelector("#birthdate").value,
+                    document.querySelector("#address").value,
+                    document.querySelector("#email").value
+                );
+                const contactList = contactStore.getList();
+        
+                document.querySelector("table tbody").innerHTML = "";
+                for (var contact of contactList) {
+                    document.querySelector("table tbody").innerHTML += `
+                    <tr>
+                        <td> ${contact.name}</td>
+                        <td> ${contact.firstname}</td>
+                        <td> ${contact.date}</td>
+                        <td> <a href="https://maps.google.com/?q=${contact.adress}">${contact.adress}</a></td>
+                        <td> <a href="mailto:${contact.mail}">${contact.mail}</a></td>
+                    <tr>`;
+                }
+            }
+            else{
+                $(".modal-title").text("Erreur");
+                $(".modal-body").text("La saisie de tous les champs est obligatoire");
+                $('#myModal').modal("show");
+            }    
+        });
     });
-
-    $(".form-control").keyup(function(event) {
-        $("#car").text($(this).val().length + ' car.');
-    });
-});
+}

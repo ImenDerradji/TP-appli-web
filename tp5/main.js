@@ -76,13 +76,13 @@ window.onload = function () {
                 // A compléter dans la suite du TP
                 this.cityWeatherLoading = true;
                 // appel AJAX avec fetch
-                fetch('https://api.openweathermap.org/data/2.5/weather?q='+_city.name+'&units=metric&lang=fr&apikey=VOTRE_APIKEY')
+                fetch('https://api.openweathermap.org/data/2.5/weather?q='+_city.name+'&units=metric&lang=fr&apikey=65f942758983900363d8984c389917e2')
                 .then(function(response) {
                     return response.json();
                 })
                 .then(function(json) {
                     app.cityWeatherLoading = false;
-                                // test du code retour
+                    // test du code retour
                     // 200 = OK
                     // 404 = city not found 
                     if(json.cod === 200){
